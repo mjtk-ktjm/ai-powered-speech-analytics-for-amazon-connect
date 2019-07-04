@@ -36,7 +36,7 @@ exports.handler = (event, context, callback) => {
     //get file name ie: ContactID
     var parsed = url.parse(recordingURL);
     var file = path.basename(parsed.pathname);
-    var contactId = file.split('.')[0];
+    var contactId = file.split('.')[0].split('_')[0];
     console.log(`Received event for this contsct ID: ${contactId}`);
 
     getTranscript(contactId)
