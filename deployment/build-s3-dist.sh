@@ -214,9 +214,10 @@ echo "Copying web site content to $deployment_dir/dist"
 cp -r $deployment_dir/../source/web_site $deployment_dir/dist/
 
 # Generate a manifest for web site files
-echo "Generating web site manifest"
-cd $deployment_dir/manifest-generator
-npm install
-node app.js
+# echo "Generating web site manifest"
+# cd $deployment_dir/manifest-generator
+# npm install
+# node app.js
+
 # Done, so go back to deployment_dir
 cd $deployment_dir
