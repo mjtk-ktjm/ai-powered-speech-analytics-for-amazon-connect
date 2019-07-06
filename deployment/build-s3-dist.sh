@@ -38,12 +38,12 @@ echo "cp -f AI-powered-speech-analytics-for-amazon-connect.template $deployment_
 cp -f AI-powered-speech-analytics-for-amazon-connect.template $deployment_dir/dist
 echo "Updating code source bucket in template with $1"
 replace="s/%%BUCKET_NAME%%/$1/g"
-echo "sed -i '' -e $replace $deployment_dir/dist/AI-powered-speech-analytics-for-amazon-connect.template"
-sed -i '' -e $replace $deployment_dir/dist/AI-powered-speech-analytics-for-amazon-connect.template
+echo "sed -i \"$deployment_dir/dist/AI-powered-speech-analytics-for-amazon-connect.template\" -e $replace $deployment_dir/dist/AI-powered-speech-analytics-for-amazon-connect.template"
+sed -i $deployment_dir/dist/AI-powered-speech-analytics-for-amazon-connect.template -e $replace $deployment_dir/dist/AI-powered-speech-analytics-for-amazon-connect.template
 echo "Updating version in template with $2"
 replace="s/%%VERSION%%/$2/g"
-echo "sed -i '' -e $replace $deployment_dir/dist/AI-powered-speech-analytics-for-amazon-connect.template"
-sed -i '' -e $replace $deployment_dir/dist/AI-powered-speech-analytics-for-amazon-connect.template
+echo "sed -i \"$deployment_dir/dist/AI-powered-speech-analytics-for-amazon-connect.template\" -e $replace $deployment_dir/dist/AI-powered-speech-analytics-for-amazon-connect.template"
+sed -i $deployment_dir/dist/AI-powered-speech-analytics-for-amazon-connect.template -e $replace $deployment_dir/dist/AI-powered-speech-analytics-for-amazon-connect.template
 
 # Build node.js CFN Lambda custom resource helper function
 echo "Building CFN custom resource helper Lambda function"
